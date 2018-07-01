@@ -17,7 +17,7 @@ Goal:
 - improve the accuracy of the classifier
 
 ## Solution
-The solution adds the predicted labels with the highest confidence to the labeled dataset. The labels with the lowest confidence show the classifier needs help form the human expert. Those true labels are added to the dataset and the cost is incremented. The amount of hints from the human expert cannot exceed the initial number of labeled samples - the amount of labeled data can only be doubled. 
+The solution adds the predicted labels with the highest confidence to the labeled dataset. The labels with the lowest confidence show the classifier needs help form the human expert. Those true labels are added to the dataset and the cost is incremented. The amount of hints from the human expert cannot exceed the initial number of labeled samples - the amount of labeled data can only be doubled. The algorithm terminates if the accuracy is 100%, if the cost reaches the previously explained limit, or if no samples have been added to the labeled dataset.
 
 ## Example
 
@@ -27,6 +27,7 @@ Setup:
 - Percentage of unlabeled data in the dataset: 98%
 - Min. confidence at which the predicted label is considered accurate: 98%
 - Max. confidence at which the human expert will be asked to replace a bad label: 36.33%
+- Number of folds for cross-validation: 4
 
 Output:
 ```
